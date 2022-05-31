@@ -1,0 +1,40 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'admin_panel/css/bootstrap.css'%}" />
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <br>
+        <br>
+        <br>
+        <br>
+        <h1>Deposit</h1>
+        <div style="width: 300px height: 300px border-style: solid;">
+    <h5>Account number: {{user.details.account_number}}</h5>
+    <h5>Name: {{user.details.full_name}}</h5>
+    {% if messages %}
+        {% for message in messages %}
+        
+        <div class="alert {{message.tags}}" role="alert">
+         {{message}}
+        </div>
+        
+        {% endfor %}
+    {% endif %}
+    <form action="" method="POST" class="form-group">
+        {% csrf_token %}
+        <label for="">Amount</label>
+        <input type="text" name="amount" class="form-control">
+        <br>
+        <button type="submit" class="btn btn-primary" >Deposit</button>
+    </form>
+</div>
+</div>
+</body>
+</html>

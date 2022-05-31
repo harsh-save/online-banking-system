@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Admininstrator Transaction Report</h2>
+    <br>
+    <br>
+    <table>
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Credit_account</th>
+                <th scope="col">Debit_account</th>
+                <th scope="col">Name</th>
+                <th scope="col">Operation</th>
+                <th scope="col">Date</th>
+                <th scope="col">Amount</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for transactions in transactions %}
+            <tr>
+                <th scope="row">{{transactions.id}}</th>
+                <td>{{transactions.credit_account}}</td>
+                <td>{{transactions.debit_account}}</td>
+                <td>{{transactions.name}}</td>
+                <td>{{transactions.operations}}</td>
+                <td>{{transactions.date}}</td>
+                <td>{{transactions.amount}}</td>
+                
+            </tr>
+           
+            {% endfor %}
+           
+        </tbody>
+    </table>
+    <style>
+        th, td{
+            padding: 6px;
+            border: 1px solid black;
+        }
+    </style>
+</body>
+</html>

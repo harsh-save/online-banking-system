@@ -1,0 +1,215 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="{% static 'landing/css/style.css'%}" />
+    <link rel="stylesheet" href="{% static 'admin_panel/css/bootstrap.css'%}" />
+    <link
+      href="http://fonts.googleapis.com/css?family=Pacifico"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+    <script src="{% static 'landing/js/bootstrap.js' %}"></script>
+    <script src="{% static 'landing/js/main.js' %}"></script>
+    <script src="{% static 'landing/js/bootstrap.js'%}"></script>
+
+    <!--test-->
+    
+<title>ProBank</title>
+
+
+  </head>
+  <body>
+    <nav class="nav">
+      <div class="container">
+        <div class="logo">
+          <a href="{% url 'landing_page' %}">ProBank</a>
+        </div>
+        <div id="mainListDiv" class="main_list">
+          <ul class="navlinks">
+            {% if user.is_authenticated %}
+            <li><a href="{% url 'account_page' %}">{{user.details.full_name}}'s Account Details</a></li>
+            <li><a href="{% url 'logout' %}">Logout</a></li>
+            <li><a href="{% url 'about_us' %}">About Us</a></li>
+            <li>Hey,{{user.details.full_name}}</li>
+            {% else %}
+            <li><a href="{% url 'login'%}">Login</a></li>
+            <li><a href="{% url 'about_us' %}">About Us</a></li>
+            
+            {% endif %}
+          </ul>
+        </div>
+
+        <!--<span class="navTrigger">
+        <i></i>
+        <i></i>
+        <i></i>
+      </span>-->
+      </div>
+    </nav>
+
+    <section class="home"></section>
+    <div class="layer">
+      <div class="caption">
+        <h1>Stay Transactional!</h1>
+        <p>
+          Perform transaction from anywhere, anytime and remain completely productive. 
+          
+        </p>
+      </div>
+    </div>
+
+    <!--<div class="container">
+      <h1 id="ha">Why choose us?</h1>
+      <hr />
+      <div class="flex-container">
+        <div class="first">
+          <i class="far fa-address-card fa-7x"></i>
+          <h4>Secure infomation</h4>
+        </div>
+        <div>2</div>
+      </div>
+    </div>-->
+    <br>
+    <br>
+    <div class="container">
+    <h1 id="ha">Why choose us!</h1>
+<br>
+<br>
+<br>
+<!--Showcase section-->
+    <div class="showcase">
+      <div class="box-1" ">
+        <i class="fas fa-user-friends fa-5x icons"></i>
+        <h3>User Friendly</h3>
+        <p style="font-size: 13px;">The experience of the application is tailored towards being simple yet truly powerful to perform your job.</p>
+      </div>
+      <div class="box-2">
+        <i class="fas fa-shield-alt fa-5x"></i>
+        <h3>Secure</h3>
+        <p style="font-size: 13px;">Security is the primary concern for us. Keepig users and their data secure is our priority.</p>
+      </div>
+      <div class="box-3">
+        <i class="fas fa-tachometer-alt fa-5x"></i>
+        <h3>Fast</h3>
+        <p style="font-size: 13px;">Our goal to provide customers with fast and responsive application with great reliability.</p>
+      </div>
+    </div>
+<br>
+<br>
+<br>
+<hr>
+    <!--Tesimonials-->
+        
+
+  
+    <!-- Jquery-->
+    
+   <!---- <script src="{% static 'landing/js/main/js'%}"></script>-->
+    <script src="{% static 'landing/js/bootstrap.js'%}"></script>
+
+    <!-- Function used to shrink nav bar removing paddings and adding black background -->
+    <script>
+      $(window).scroll(function () {
+        if ($(document).scrollTop() > 50) {
+          $(".nav").addClass("affix");
+          console.log("OK");
+        } else {
+          $(".nav").removeClass("affix");
+        }
+      });
+
+      //$document.ready(function () {
+        // $('.carousel').carousel();
+     //});
+    </script>
+    <script src="{% static 'landing/js/bootstrap.js' %}"></script>
+    <script src="{% static 'landing/js/main.js' %}"></script>
+
+    <style>
+      .home {
+        width: 100%;
+        height: 100vh;
+        background-image: url({% static "landing/img/background.jpg" %});
+
+        background-position: center top;
+        background-size: cover;
+        position: relative;
+      }
+      #ha {
+        justify-content: center;
+        font-size: 40px;
+        margin: 20px;
+        text-align: center;
+        font-weight: 500;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      .flex-container {
+        display: flex;
+        flex-direction: row;
+        margin: 30px;
+      }
+      .first {
+        height: 200px;
+        width: 200px;
+      }
+      .first i {
+        margin: 30px;
+      }
+      .showcase div{
+        padding: 10px; 
+        
+      }
+
+      .showcase{
+        display: flex;
+        justify-content: space-between;
+      }
+      .icons{
+        justify-content: center;
+      }
+
+      .caption-2 {
+  z-index: 0;
+
+  position: relative;
+  color: white;
+
+  text-align: center;
+  padding-top: 50px;
+}
+.caption-2 h2{
+  font-size: 60px;
+  padding-right: 400px;
+  font-family: sans-serif;
+}
+.caption-2 q{
+  font-size: 40px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+/*TEsting*/
+
+}
+
+      
+    </style>
+    
+  </body>
+  <footer class="bg-light text-center text-lg-start">
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2020 Copyright:
+      <a class="text-dark" href="{% url 'landing_page' %}">ProBank</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+  
+</html>

@@ -1,0 +1,29 @@
+{% load static %} {% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'admin_panel/css/bootstrap.css'%}" />
+  </head>
+  <body novalidate>
+    <div class="container">
+      <br />
+      <h2>Add a new bank account</h2>
+      <hr />
+      <form method="POST" action="" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="col-lg-6">
+          {{user_form|crispy}} {{acc_form|crispy}}
+        </div>
+
+        <input type="submit" />
+      </form>
+
+      <h3>
+        {% for user in users%} {{user.username}} {{user.details.age}} {%endfor%}
+      </h3>
+    </div>
+  </body>
+</html>

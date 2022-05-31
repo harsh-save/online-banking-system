@@ -1,0 +1,38 @@
+body {
+    padding: 0px;
+    margin: 0px;
+}
+
+.user_table {
+    padding-top: 50px;
+    margin: 20px;
+}
+
+
+
+.top_bar {
+    width: 100%;
+    padding-left: 30px;
+    margin: 0 auto;
+}
+
+.search_bar {
+    padding-top: 40px;
+}
+
+#add_btn {
+    margin-left: 900px;
+    color: white;
+}
+
+#heading {
+    padding-top: 30px;
+}
+
+.warning_class {
+    border: 2px solid red;
+}
+
+.custom{
+    max-width: 1160px;
+}

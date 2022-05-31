@@ -1,0 +1,76 @@
+{% extends 'admin/admin_nav.html'%}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transactions</title>
+    <link rel="stylesheet" href="{% static 'admin_panel/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'admin_panel/css/admin_style.css' %}">
+</head>
+
+<body>
+    {% block content %}
+    <div class="container">
+        <br>
+        <h2>Transaction information</h2>
+        <hr>
+        <div>
+            <a href="{% url 'report' %}" class="btn btn-success">Generate Report</a>
+        </div>
+
+        <div class="user_table">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Transaction ID</th>
+                        <th scope="col">Credit Account</th>
+                        <th scope="col">Debit Account</th>
+                        <th scope="col">Name</th>
+                        
+                        <th scope="col">Operation</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Amount</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for transactions in transactions %}
+                    <tr>
+
+                        <th scope="row">{{transactions.id}}</th>
+
+                        <td>{{transactions.transaction_id}}</td>
+                        <td>{{transactions.credit_account}}</td>
+                        <td>{{transactions.debit_account}}</td>
+                        <td>{{transactions.name}}</td>
+                        
+                        <td>{{transactions.operations}}</td>
+                        <td>{{transactions.date}}</td>
+                        <td>{{transactions.amount}}</td>
+                    </tr>
+                    {% endfor %}
+                   <!---- <tr>
+                        <th scope="row">2</th>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                        <td>@fat</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td>Larry</td>
+                        <td>the Bird</td>
+                        <td>@twitter</td>
+                    </tr>-->
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+    {% endblock %}
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+{% extends 'admin/admin_nav.html'%}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'landing/css/style.css'%}" />
+    <link rel="stylesheet" href="{% static 'admin_panel/css/bootstrap.css'%}" />
+</head>
+<body>
+    {% block content %}
+    <div class="container"> 
+        <div style="padding-top: 60px;">
+        <h2>User profile</h2>
+        <hr>
+        <h4>Account holder's name: <span class="text-primary">{{user.details.full_name}}</span></h4>
+        <br>
+        <h4>Account number: {{user.details.account_number}}</h4>
+        <br>
+        <h4>Email: <span class="text-primary">{{user.email}}</span></h4>
+        <br>
+        <h4>Mobile number:<span class="text-primary">{{user.details.phone}}</span></h4>
+        <br>
+        <h4>Account holder's name: <span class="text-primary">{{user.details.full_name}}</span></h4>
+        <br>
+        <h4>Address: <span class="text-primary">{{user.details.address}}</span></h4>
+        <br>
+        <h4>Date of birth: <span class="text-primary">{{user.details.dob}}</span></h4> 
+        <br>
+        <h4>Balance:<span class="text-primary">{{user.details.balance}}</span></h4> 
+
+        <a class="btn btn-outline-info" href="{% url 'edit' pk=user.pk %}">Edit user details</a></td>
+        
+    </div>
+    
+    {% endblock %}
+
+    
+</body>
+</html>
